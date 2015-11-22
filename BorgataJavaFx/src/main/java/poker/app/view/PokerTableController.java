@@ -429,13 +429,28 @@ public class PokerTableController {
 				BestPlayerHands.add(hBestHand);
 			}
 
-			Hand WinningHand = Hand.PickBestHand(BestPlayerHands);
-			Player WinningPlayer = (Player) hsPlayerHand.get(WinningHand);
-			System.out.println("Winning Player Position: " + WinningPlayer.getiPlayerPosition());
+			Hand winningHand = Hand.PickBestHand(BestPlayerHands);
+			Player winningPlayer = (Player) hsPlayerHand.get(winningHand);
 			Alert winner = new Alert(AlertType.INFORMATION);
-			alert.showAndWait();
-			winner.setContentText("Congratulations, you have won the game with a score of: " + WinningHand.getHandStrength());
+			System.out.println("Position of winning player is: " + winningPlayer.getiPlayerPosition());
 			
+			String winner1 = "";
+			switch(winningPlayer.getiPlayerPosition()) {
+			case 1:
+				winner1 = this.txtP1Name.getText();
+				break;
+			case 2:
+				winner1 = this.txtP2Name.getText();
+				break;
+			case 3:
+				winner1 = this.txtP3Name.getText();
+				break;
+			case 4:
+				winner1= this.txtP4Name.getText();
+			}
+			winner.setHeaderText("The winner is: " + winner);
+			winner.setContentText("You have won the game with: " + winningHand.getHandStrength());
+			winner.showAndWait();
 			SetGameControls(eGameState.EndOfGame);
 			
 
