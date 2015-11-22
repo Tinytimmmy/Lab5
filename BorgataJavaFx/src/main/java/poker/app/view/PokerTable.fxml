@@ -99,7 +99,7 @@
             </AnchorPane>
          </left>
          <right>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="386.0" prefWidth="149.0" translateX="-100.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox layoutY="145.0" prefHeight="100.0" prefWidth="275.0">
                      <children>
@@ -113,7 +113,7 @@
                               <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <HBox fx:id="hBoxP4Cards" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                              <HBox fx:id="hBoxP4Cards" prefHeight="50.0" prefWidth="296.0" GridPane.columnIndex="1" />
                               <ToggleButton fx:id="btnP4SitLeave" mnemonicParsing="false" onAction="#handleP4SitLeave" prefHeight="33.0" prefWidth="85.0" styleClass="togglebutton" text="Sit" GridPane.rowIndex="1" />
                               <TextField fx:id="txtP4Name" style="-fx-background-color: lightgreen;" />
                               <Label fx:id="lblP4Name" />
