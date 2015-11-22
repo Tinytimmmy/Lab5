@@ -434,7 +434,7 @@ public class PokerTableController {
 			System.out.println("Winning Player Position: " + WinningPlayer.getiPlayerPosition());
 			Alert winner = new Alert(AlertType.INFORMATION);
 			alert.showAndWait();
-			winner.setContentText("Congratulations, you won the game with a score of: " + WinningHand.getHandStrength());
+			winner.setContentText("Congratulations, you have won the game with a score of: " + WinningHand.getHandStrength());
 			
 			SetGameControls(eGameState.EndOfGame);
 			
