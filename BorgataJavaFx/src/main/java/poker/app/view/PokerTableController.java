@@ -56,7 +56,7 @@ public class PokerTableController {
 
 	@FXML
 	private Button btnToggle;
-	
+
 	boolean bPlay = false;
 
 	boolean bP1Sit = false;
@@ -236,7 +236,6 @@ public class PokerTableController {
 	private void handlePlay() {
 
 		eGameState = eGameState.StartOfGame;
-		
 
 		// Clear all players hands
 		hBoxP1Cards.getChildren().clear();
@@ -255,8 +254,8 @@ public class PokerTableController {
 		// Get the Rule, start the Game
 		Rule rle = new Rule(eGame.Omaha);
 		gme = new GamePlay(rle);
-		
-		switch(gamePlayed) {
+
+		switch (gamePlayed) {
 		case 1:
 			rle = new Rule(eGame.TexasHoldEm);
 			gme = new GamePlay(rle);
@@ -281,35 +280,36 @@ public class PokerTableController {
 			rle = new Rule(eGame.SevenDraw);
 			gme = new GamePlay(rle);
 			break;
-		default: 
+		default:
 			rle = new Rule(eGame.FiveStud);
 			gme = new GamePlay(rle);
 			break;
-		
-		// Add the seated players to the game, create a GPPH for the player
-		for (Player p : mainApp.GetSeatedPlayers()) {
-			gme.addPlayerToGame(p);
-			GamePlayPlayerHand GPPH = new GamePlayPlayerHand();
-			GPPH.setGame(gme);
-			GPPH.setPlayer(p);
-			GPPH.setHand(new Hand());
-			gme.addGamePlayPlayerHand(GPPH);
-			DealFaceDownCards(gme.getNbrOfCards(), p.getiPlayerPosition());
+
+			// Add the seated players to the game, create a GPPH for the player
+			for (Player p : mainApp.GetSeatedPlayers()) {
+				gme.addPlayerToGame(p);
+				GamePlayPlayerHand GPPH = new GamePlayPlayerHand();
+				GPPH.setGame(gme);
+				GPPH.setPlayer(p);
+				GPPH.setHand(new Hand());
+				gme.addGamePlayPlayerHand(GPPH);
+				DealFaceDownCards(gme.getNbrOfCards(), p.getiPlayerPosition());
+			}
+
+			// Add the common player (community player) to the game
+			GamePlayPlayerHand GPCH = new GamePlayPlayerHand();
+			GPCH.setGame(gme);
+			GPCH.setPlayer(PlayerCommon);
+			GPCH.setHand(new Hand());
+			gme.addGamePlayCommonHand(GPCH);
+			DealFaceDownCards(gme.getRule().GetCommunityCardsCount(), 0);
+
+			// Add a deck to the game
+			gme.setGameDeck(new Deck(rle.GetNumberOfJokers(), rle.GetRuleCards()));
+
+			// Call common code to set the game controls
+			SetGameControls(eGameState);
 		}
-
-		// Add the common player (community player) to the game
-		GamePlayPlayerHand GPCH = new GamePlayPlayerHand();
-		GPCH.setGame(gme);
-		GPCH.setPlayer(PlayerCommon);
-		GPCH.setHand(new Hand());
-		gme.addGamePlayCommonHand(GPCH);
-		DealFaceDownCards(gme.getRule().GetCommunityCardsCount(), 0);
-
-		// Add a deck to the game
-		gme.setGameDeck(new Deck(rle.GetNumberOfJokers(), rle.GetRuleCards()));
-
-		// Call common code to set the game controls
-		SetGameControls(eGameState);}
 
 	}
 
@@ -433,9 +433,9 @@ public class PokerTableController {
 			Player winningPlayer = (Player) hsPlayerHand.get(winningHand);
 			Alert winner = new Alert(AlertType.INFORMATION);
 			System.out.println("Position of winning player is: " + winningPlayer.getiPlayerPosition());
-			
+
 			String winner1 = "";
-			switch(winningPlayer.getiPlayerPosition()) {
+			switch (winningPlayer.getiPlayerPosition()) {
 			case 1:
 				winner1 = this.txtP1Name.getText();
 				break;
@@ -446,13 +446,12 @@ public class PokerTableController {
 				winner1 = this.txtP3Name.getText();
 				break;
 			case 4:
-				winner1= this.txtP4Name.getText();
+				winner1 = this.txtP4Name.getText();
 			}
 			winner.setHeaderText("The winner is: " + winner1);
 			winner.setContentText("You have won the game with: " + winningHand.getHandStrength());
 			winner.showAndWait();
 			SetGameControls(eGameState.EndOfGame);
-			
 
 		} else {
 			if (iCardDrawnPlayer + iCardDrawnCommon + 2 >= gme.getRule().getTotalCardsToDraw()) {
@@ -604,10 +603,10 @@ public class PokerTableController {
 
 	}
 
-    @FXML
-    private void GetToggleGroup() {
+	@FXML
+	private void GetToggleGroup() {
 
-    	mainApp.getToggleGroup();
-    	
-    }
+		mainApp.getToggleGroup();
+
+	}
 }

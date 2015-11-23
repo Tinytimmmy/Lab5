@@ -35,18 +35,17 @@ import pokerBase.Table;
 public class MainApp extends Application {
 
 	private Stage primaryStage;
-	private BorderPane rootLayout;	
-	private Table tbl;	
+	private BorderPane rootLayout;
+	private Table tbl;
 	private int iGameType;
-	
+
 	RootLayoutController rootController = null;
-	
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 
 		tbl = new Table();
-		
+
 		BorderPane root = new BorderPane();
 		Scene scene = new Scene(root, 1600, 400);
 
@@ -72,7 +71,7 @@ public class MainApp extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
-			
+
 			// Show the scene containing the root layout.
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
@@ -108,31 +107,26 @@ public class MainApp extends Application {
 	}
 
 	public static void main(String[] args) {
-		launch(args);		
+		launch(args);
 	}
-	
-	public void AddPlayerToTable(Player p)
-	{
+
+	public void AddPlayerToTable(Player p) {
 		tbl.addPlayer(p);
 	}
-	
-	public ArrayList<Player> GetSeatedPlayers()
-	{
+
+	public ArrayList<Player> GetSeatedPlayers() {
 		return tbl.getPlayers();
 	}
-	
-	public void RemovePlayerFromTable(int PlayerPosition)
-	{
+
+	public void RemovePlayerFromTable(int PlayerPosition) {
 		Player playerToRemove = null;
-		for (Player p: tbl.getPlayers())
-		{
-			if (p.getiPlayerPosition() == PlayerPosition)
-			{
+		for (Player p : tbl.getPlayers()) {
+			if (p.getiPlayerPosition() == PlayerPosition) {
 				playerToRemove = p;
 				break;
 			}
-		}		
-		tbl.removePlayer(playerToRemove);		
+		}
+		tbl.removePlayer(playerToRemove);
 	}
 
 	public int getiGameType() {
@@ -142,12 +136,10 @@ public class MainApp extends Application {
 	public void setiGameType(int iGameType) {
 		this.iGameType = iGameType;
 	}
-	
-	public ToggleGroup getToggleGroup()
-	{
+
+	public ToggleGroup getToggleGroup() {
 		ToggleGroup tgl = rootController.getTglGames();
 		return tgl;
-		
 
 	}
 }
