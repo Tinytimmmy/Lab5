@@ -6,12 +6,11 @@ public class GamePlayPlayerHand {
 	private Player player = null;
 	private Hand hand = null;
 	private Hand BestHand = null;
-			
-	
+
 	private Player WinningPlayer = null;
-	
+
 	public GamePlayPlayerHand() {
-	
+
 	}
 
 	public GamePlay getGame() {
@@ -38,11 +37,10 @@ public class GamePlayPlayerHand {
 		this.hand = hand;
 	}
 
-	public void addCardToHand( Card c)
-	{
+	public void addCardToHand(Card c) {
 		getHand().AddCardToHand(c);
 	}
-	
+
 	public Player getWinningPlayer() {
 		return WinningPlayer;
 	}
@@ -59,5 +57,4 @@ public class GamePlayPlayerHand {
 		BestHand = bestHand;
 	}
 
-	
 }

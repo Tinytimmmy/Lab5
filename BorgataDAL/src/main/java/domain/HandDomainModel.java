@@ -46,7 +46,6 @@ public class HandDomainModel {
 		return CardsInHand.get(location);
 	}
 
-	
 	public void setCardsInHand(ArrayList<CardDomainModel> cardsInHand) {
 		CardsInHand = cardsInHand;
 	}
@@ -79,7 +78,6 @@ public class HandDomainModel {
 		return HandStrength;
 	}
 
-	
 	public void setHandStrength(int handStrength) {
 		HandStrength = handStrength;
 	}
@@ -87,7 +85,6 @@ public class HandDomainModel {
 	public ArrayList<CardDomainModel> getKicker() {
 		return Kickers;
 	}
-
 
 	public void setKickers(ArrayList<CardDomainModel> kickers) {
 		Kickers = kickers;
@@ -148,6 +145,5 @@ public class HandDomainModel {
 	public void setbNatural(int bNatural) {
 		this.bNatural = bNatural;
 	}
-
 
 }

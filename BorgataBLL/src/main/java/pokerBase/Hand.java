@@ -72,47 +72,39 @@ public class Hand extends HandDomainModel {
 		int iPlayerCardsMax = gme.getRule().getPlayerCardsMax();
 		int iCommonCardsMin = gme.getRule().getCommunityCardsMin();
 		int iCommonCardsMax = gme.getRule().getCommunityCardsMax();
-		
-		
-		for (int iPassPlayer = 0; iPassPlayer <= (iPlayerCardsMax - iPlayerCardsMin);iPassPlayer++)
-		{
-			Iterator iterPlayer = CombinatoricsUtils.combinationsIterator(iPlayerNumberOfCards, (iPlayerCardsMin + iPassPlayer));
-			while (iterPlayer.hasNext())				
-			{
+
+		for (int iPassPlayer = 0; iPassPlayer <= (iPlayerCardsMax - iPlayerCardsMin); iPassPlayer++) {
+			Iterator iterPlayer = CombinatoricsUtils.combinationsIterator(iPlayerNumberOfCards,
+					(iPlayerCardsMin + iPassPlayer));
+			while (iterPlayer.hasNext()) {
 				int[] iPlayerCardsToPick = (int[]) iterPlayer.next();
 
-				if (iCommonCardsMax > 0)
-				{
-					Iterator iterCommon = CombinatoricsUtils.combinationsIterator(iCommonCardsMax, (iCommonCardsMax - iPlayerCardsToPick.length));
-					while (iterCommon.hasNext())
-					{
+				if (iCommonCardsMax > 0) {
+					Iterator iterCommon = CombinatoricsUtils.combinationsIterator(iCommonCardsMax,
+							(iCommonCardsMax - iPlayerCardsToPick.length));
+					while (iterCommon.hasNext()) {
 						int[] iCommonCardsToPick = (int[]) iterCommon.next();
 						Hand h = new Hand();
-						for (int iPlayerArrayPos = 0; iPlayerArrayPos < iPlayerCardsToPick.length; iPlayerArrayPos++)
-						{
+						for (int iPlayerArrayPos = 0; iPlayerArrayPos < iPlayerCardsToPick.length; iPlayerArrayPos++) {
 							h.AddCardToHand((Card) PlayerHand.getCards().get(iPlayerCardsToPick[iPlayerArrayPos]));
 						}
-						
-						for (int iCommonArrayPos = 0; iCommonArrayPos < iCommonCardsToPick.length; iCommonArrayPos++)
-						{
+
+						for (int iCommonArrayPos = 0; iCommonArrayPos < iCommonCardsToPick.length; iCommonArrayPos++) {
 							h.AddCardToHand((Card) CommonHand.getCards().get(iCommonCardsToPick[iCommonArrayPos]));
-						}				
+						}
 						CombinHands.add(h);
-					}						
-				}
-				else if (iCommonCardsMax == 0)
-				{
+					}
+				} else if (iCommonCardsMax == 0) {
 					Hand h = new Hand();
-					for (int iPlayerArrayPos = 0; iPlayerArrayPos < iPlayerCardsToPick.length; iPlayerArrayPos++)
-					{
+					for (int iPlayerArrayPos = 0; iPlayerArrayPos < iPlayerCardsToPick.length; iPlayerArrayPos++) {
 						h.AddCardToHand((Card) PlayerHand.getCards().get(iPlayerCardsToPick[iPlayerArrayPos]));
 					}
 					CombinHands.add(h);
 				}
-			}			
+			}
 		}
 
-		//	Evaluate each hand (why not?)
+		// Evaluate each hand (why not?)
 		for (Hand h : CombinHands) {
 			h = Hand.EvalHand(h);
 		}

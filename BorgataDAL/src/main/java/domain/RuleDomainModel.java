@@ -57,7 +57,7 @@ public class RuleDomainModel {
 			this.NumberOfJokers = 0;
 			this.CommunityCards = 0;
 			break;
-		}		
+		}
 		case DeucesWild: {
 			this.MaxNumberOfPlayers = 4;
 			this.NumberOfCards = 5;
@@ -98,14 +98,12 @@ public class RuleDomainModel {
 	public int GetNumberOfJokers() {
 		return this.NumberOfJokers;
 	}
-	
-	public int GetCommunityCardsCount()
-	{
+
+	public int GetCommunityCardsCount() {
 		return this.CommunityCards;
 	}
-	
-	public ArrayList<CardDomainModel> GetRuleCards()
-	{
+
+	public ArrayList<CardDomainModel> GetRuleCards() {
 		return this.RuleCards;
 	}
 }

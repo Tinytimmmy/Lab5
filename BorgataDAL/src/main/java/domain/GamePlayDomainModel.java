@@ -11,7 +11,6 @@ import domain.RuleDomainModel;
 
 public class GamePlayDomainModel {
 
-	
 	@XmlElement
 	private UUID GameID;
 	@XmlElement
@@ -22,29 +21,24 @@ public class GamePlayDomainModel {
 	private int NbrOfJokers;
 	@XmlElement
 	private ArrayList<CardDomainModel> WildCards = new ArrayList<CardDomainModel>();
-	
-	public UUID GetGameID()
-	{
+
+	public UUID GetGameID() {
 		return this.GameID;
 	}
-		
-	public int GetMaxNumberOfPlayers()
-	{
+
+	public int GetMaxNumberOfPlayers() {
 		return MaxNbrOfPlayers;
 	}
-	
-	public int GetNumberOfCards()
-	{
+
+	public int GetNumberOfCards() {
 		return NbrOfCards;
 	}
-	
-	public int GetNumberOfJokers()
-	{
+
+	public int GetNumberOfJokers() {
 		return NbrOfJokers;
 	}
-	
-	public ArrayList<CardDomainModel> GetWildCards()
-	{
+
+	public ArrayList<CardDomainModel> GetWildCards() {
 		return this.WildCards;
 	}
 

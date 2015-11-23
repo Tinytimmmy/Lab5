@@ -34,73 +34,73 @@ public class Joker_Test {
 	public void FiveOfAKind() {
 		Deck d = new Deck();
 		Hand h = new Hand();
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.CLUBS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
+		h.AddCardToHand(new Card(eSuit.CLUBS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.CLUBS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.CLUBS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.CLUBS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
 		h = Hand.EvalHand(h);
-		
+
 		assertTrue(h.getHandStrength() == eHandStrength.FiveOfAKind.getHandStrength());
-		
+
 	}
-	
+
 	@Test
 	public void RoyalFlush() {
 		Deck d = new Deck();
 		Hand h = new Hand();
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.JACK,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.QUEEN,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.JACK, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.QUEEN, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
 		h = Hand.EvalHand(h);
-		
+
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
-		
+
 	}
-	
+
 	@Test
 	public void RoyalFlush2() {
 		Deck d = new Deck();
 		Hand h = new Hand();
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.QUEEN,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.QUEEN, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
 		h = Hand.EvalHand(h);
-		
+
 		assertTrue(h.getHandStrength() == eHandStrength.RoyalFlush.getHandStrength());
-		
+
 	}
-	
+
 	@Test
 	public void FourOfAKind() {
 		Deck d = new Deck();
 		Hand h = new Hand();
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.FIVE,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.FIVE, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
 		h = Hand.EvalHand(h);
-		
+
 		assertTrue(h.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
-		
+
 	}
-	
+
 	public void FourOfAKind2() {
 		Deck d = new Deck();
 		Hand h = new Hand();
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TWO,true,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.TEN,0));
-		h.AddCardToHand(new Card(eSuit.HEARTS,eRank.FIVE,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
-		h.AddCardToHand(new Card(eSuit.JOKER,eRank.JOKER,0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TWO, true, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.TEN, 0));
+		h.AddCardToHand(new Card(eSuit.HEARTS, eRank.FIVE, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
+		h.AddCardToHand(new Card(eSuit.JOKER, eRank.JOKER, 0));
 		h = Hand.EvalHand(h);
-		
+
 		assertTrue(h.getHandStrength() == eHandStrength.FourOfAKind.getHandStrength());
-		
+
 	}
 }

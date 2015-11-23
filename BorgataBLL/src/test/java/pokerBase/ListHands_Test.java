@@ -34,8 +34,6 @@ public class ListHands_Test {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
- 
 
 	@Test
 	public void ListHoldEm() {
@@ -44,7 +42,7 @@ public class ListHands_Test {
 
 		Rule rle = new Rule(eGame.TexasHoldEm);
 		GamePlay gme = new GamePlay(rle);
-		
+
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.ACE, 0));
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.KING, 0));
 
@@ -56,30 +54,24 @@ public class ListHands_Test {
 
 		ArrayList<Hand> AllHands = new ArrayList<Hand>();
 
-		AllHands = Hand.ListHands(playerHand, commonHand,gme);
+		AllHands = Hand.ListHands(playerHand, commonHand, gme);
 		System.out.println(AllHands.size());
 		assertTrue(AllHands.size() == gme.getRule().getPossibleHandCombinations());
 
 		HashSet hsHands = new HashSet();
-		
+
 		for (Hand h : AllHands) {
 			hsHands.add(h);
 		}
-		
-		//	Check to see if I have N different hands
+
+		// Check to see if I have N different hands
 		assertTrue(hsHands.size() == gme.getRule().getPossibleHandCombinations());
-		
 
 		Hand h = Hand.PickBestHand(AllHands);
-		assertTrue("This should be a flush",h.getHandStrength() == eHandStrength.Flush.getHandStrength());
+		assertTrue("This should be a flush", h.getHandStrength() == eHandStrength.Flush.getHandStrength());
 		assertTrue("This should be an ace", h.getHiHand() == eRank.ACE.getRank());
 
-		
-		
-
 	}
-	
-
 
 	@Test
 	public void ListOmaha() {
@@ -102,19 +94,19 @@ public class ListHands_Test {
 
 		ArrayList<Hand> AllHands = new ArrayList<Hand>();
 
-		AllHands = Hand.ListHands(playerHand,  commonHand, gme);
+		AllHands = Hand.ListHands(playerHand, commonHand, gme);
 		System.out.println(AllHands.size());
 		assertTrue(AllHands.size() == gme.getRule().getPossibleHandCombinations());
 
 		HashSet hsHands = new HashSet();
-		
+
 		for (Hand h : AllHands) {
 			hsHands.add(h);
 		}
-		
-		//	Check to see if I have N different hands
+
+		// Check to see if I have N different hands
 		assertTrue(hsHands.size() == gme.getRule().getPossibleHandCombinations());
-		
+
 		for (Hand h : AllHands) {
 			System.out.print(h.getCards().get(0).getRank().getRank());
 			System.out.print(" ");
@@ -153,19 +145,19 @@ public class ListHands_Test {
 
 		ArrayList<Hand> AllHands = new ArrayList<Hand>();
 
-		AllHands = Hand.ListHands(playerHand,  commonHand, gme);
+		AllHands = Hand.ListHands(playerHand, commonHand, gme);
 		System.out.println(AllHands.size());
 		assertTrue(AllHands.size() == gme.getRule().getPossibleHandCombinations());
 
 		HashSet hsHands = new HashSet();
-		
+
 		for (Hand h : AllHands) {
 			hsHands.add(h);
 		}
-		
-		//	Check to see if I have N different hands
+
+		// Check to see if I have N different hands
 		assertTrue(hsHands.size() == gme.getRule().getPossibleHandCombinations());
-		
+
 		for (Hand h : AllHands) {
 			System.out.print(h.getCards().get(0).getRank().getRank());
 			System.out.print(" ");
@@ -182,6 +174,7 @@ public class ListHands_Test {
 
 		}
 	}
+
 	@Test
 	public void ListSevenCard() {
 		Hand playerHand = new Hand();
@@ -189,7 +182,7 @@ public class ListHands_Test {
 
 		Rule rle = new Rule(eGame.SevenDraw);
 		GamePlay gme = new GamePlay(rle);
-		
+
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.ACE, 0));
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.KING, 0));
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.QUEEN, 0));
@@ -199,10 +192,9 @@ public class ListHands_Test {
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.THREE, 0));
 		playerHand.AddCardToHand(new Card(eSuit.CLUBS, eRank.SIX, 0));
 
-
 		ArrayList<Hand> AllHands = new ArrayList<Hand>();
 
-		AllHands = Hand.ListHands(playerHand, commonHand,gme);
+		AllHands = Hand.ListHands(playerHand, commonHand, gme);
 		System.out.println(AllHands.size());
 		assertTrue(AllHands.size() == gme.getRule().getPossibleHandCombinations());
 
@@ -222,7 +214,5 @@ public class ListHands_Test {
 
 		}
 	}
-
-
 
 }

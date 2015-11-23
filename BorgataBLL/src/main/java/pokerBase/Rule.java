@@ -31,9 +31,9 @@ public class Rule {
 			this.PlayerCardsMin = 5;
 			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
-			this.CommunityCardsMax = 0;	
+			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 1;
-			int[] iCardsToDraw = {2,1,1,1};
+			int[] iCardsToDraw = { 2, 1, 1, 1 };
 			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
@@ -42,12 +42,12 @@ public class Rule {
 			this.PlayerNumberOfCards = 5;
 			this.NumberOfJokers = 21;
 			this.PlayerCardsMin = 5;
-			this.PlayerCardsMax = 5;			
+			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
 			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 1;
-			int[] iCardsToDraw = {2,1,1,1};
-			this.iCardsToDraw = iCardsToDraw;			
+			int[] iCardsToDraw = { 2, 1, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		case FiveStudTwoJoker: {
@@ -55,12 +55,12 @@ public class Rule {
 			this.PlayerNumberOfCards = 5;
 			this.NumberOfJokers = 2;
 			this.PlayerCardsMin = 5;
-			this.PlayerCardsMax = 5;			
+			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
 			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 1;
-			int[] iCardsToDraw = {2,1,1,1};
-			this.iCardsToDraw = iCardsToDraw;			
+			int[] iCardsToDraw = { 2, 1, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		case TexasHoldEm: {
@@ -68,12 +68,12 @@ public class Rule {
 			this.PlayerNumberOfCards = 2;
 			this.NumberOfJokers = 0;
 			this.PlayerCardsMin = 0;
-			this.PlayerCardsMax = 2;			
+			this.PlayerCardsMax = 2;
 			this.CommunityCardsMin = 3;
 			this.CommunityCardsMax = 5;
 			this.PossibleHandCombinations = 21;
-			int[] iCardsToDraw = {2,3,1,1};
-			this.iCardsToDraw = iCardsToDraw;			
+			int[] iCardsToDraw = { 2, 3, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		case Omaha: {
@@ -81,12 +81,12 @@ public class Rule {
 			this.PlayerNumberOfCards = 4;
 			this.NumberOfJokers = 0;
 			this.PlayerCardsMin = 2;
-			this.PlayerCardsMax = 2;			
+			this.PlayerCardsMax = 2;
 			this.CommunityCardsMin = 3;
 			this.CommunityCardsMax = 5;
 			this.PossibleHandCombinations = 60;
-			int[] iCardsToDraw = {2,2,3,1,1};
-			this.iCardsToDraw = iCardsToDraw;				
+			int[] iCardsToDraw = { 2, 2, 3, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		case SuperOmaha: {
@@ -94,28 +94,28 @@ public class Rule {
 			this.PlayerNumberOfCards = 4;
 			this.NumberOfJokers = 0;
 			this.PlayerCardsMin = 0;
-			this.PlayerCardsMax = 2;			
+			this.PlayerCardsMax = 2;
 			this.CommunityCardsMin = 3;
 			this.CommunityCardsMax = 5;
 			this.PossibleHandCombinations = 81;
-			int[] iCardsToDraw = {2,2,3,1,1};
-			this.iCardsToDraw = iCardsToDraw;				
+			int[] iCardsToDraw = { 2, 2, 3, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
-		}		
+		}
 		case SevenDraw: {
 			this.MaxNumberOfPlayers = 4;
 			this.PlayerNumberOfCards = 7;
 			this.NumberOfJokers = 0;
 			this.PlayerCardsMin = 5;
-			this.PlayerCardsMax = 5;			
+			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
 			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 21;
-			int[] iCardsToDraw = {1,1,1,1,1,1,1};
-			this.iCardsToDraw = iCardsToDraw;				
-			
+			int[] iCardsToDraw = { 1, 1, 1, 1, 1, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
+
 			break;
-		}		
+		}
 		case DeucesWild: {
 			this.MaxNumberOfPlayers = 4;
 			this.PlayerNumberOfCards = 5;
@@ -125,12 +125,12 @@ public class Rule {
 			this.RuleCards.add(new Card(eSuit.SPADES, eRank.TWO, 14));
 			this.RuleCards.add(new Card(eSuit.CLUBS, eRank.TWO, 27));
 			this.PlayerCardsMin = 5;
-			this.PlayerCardsMax = 5;			
+			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
 			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 1;
-			int[] iCardsToDraw = {1,1,1,1,1};
-			this.iCardsToDraw = iCardsToDraw;				
+			int[] iCardsToDraw = { 1, 1, 1, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		case AcesAndEights: {
@@ -146,12 +146,12 @@ public class Rule {
 			this.RuleCards.add(new Card(eSuit.SPADES, eRank.EIGHT, 20));
 			this.RuleCards.add(new Card(eSuit.CLUBS, eRank.EIGHT, 33));
 			this.PlayerCardsMin = 5;
-			this.PlayerCardsMax = 5;			
+			this.PlayerCardsMax = 5;
 			this.CommunityCardsMin = 0;
 			this.CommunityCardsMax = 0;
 			this.PossibleHandCombinations = 1;
-			int[] iCardsToDraw = {1,1,1,1,1};
-			this.iCardsToDraw = iCardsToDraw;							
+			int[] iCardsToDraw = { 1, 1, 1, 1, 1 };
+			this.iCardsToDraw = iCardsToDraw;
 			break;
 		}
 		}
@@ -168,18 +168,16 @@ public class Rule {
 	public int GetNumberOfJokers() {
 		return this.NumberOfJokers;
 	}
-	
-	public int GetCommunityCardsCount()
-	{
+
+	public int GetCommunityCardsCount() {
 		return this.CommunityCardsMax;
 	}
-	
-	public ArrayList<CardDomainModel> GetRuleCards()
-	{
+
+	public ArrayList<CardDomainModel> GetRuleCards() {
 		return this.RuleCards;
 	}
-	public eGame GetGame()
-	{
+
+	public eGame GetGame() {
 		return this.Game;
 	}
 
@@ -210,9 +208,8 @@ public class Rule {
 	public int getPlayerCardsMax() {
 		return PlayerCardsMax;
 	}
-	
-	public int getTotalCardsToDraw()
-	{
+
+	public int getTotalCardsToDraw() {
 		return this.GetPlayerNumberOfCards() + this.getCommunityCardsMax();
 	}
 
@@ -235,5 +232,5 @@ public class Rule {
 	public void setiCardsToDraw(int[] iCardsToDraw) {
 		this.iCardsToDraw = iCardsToDraw;
 	}
-	
+
 }

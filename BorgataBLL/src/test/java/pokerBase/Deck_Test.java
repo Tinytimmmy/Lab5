@@ -30,21 +30,20 @@ public class Deck_Test {
 	public void TestFullDeck() {
 		int iDeckSize = 52;
 		Deck d = new Deck();
-		assertTrue(d.getTotalCards() == iDeckSize);		
+		assertTrue(d.getTotalCards() == iDeckSize);
 	}
-	
+
 	@Test
 	public void DrawOne() {
 		int iDeckSize = 52;
 		int iDeckSizeDrawOne = 51;
-		
+
 		Deck d = new Deck();
 		assertTrue(d.getTotalCards() == iDeckSize);
 		d.drawFromDeck();
-		
+
 		assertTrue(d.getTotalCards() == iDeckSizeDrawOne);
-		
+
 	}
-	
 
 }

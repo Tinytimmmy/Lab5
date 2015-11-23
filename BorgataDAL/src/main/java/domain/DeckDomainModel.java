@@ -14,8 +14,8 @@ import enums.eSuit;
 
 @XmlRootElement
 public class DeckDomainModel {
-	
-	@XmlElement (name="Remaining Card")
+
+	@XmlElement(name = "Remaining Card")
 	public ArrayList<CardDomainModel> cards;
 
 }

@@ -7,12 +7,12 @@ public class PlayerDomainModel {
 	private UUID PlayerID;
 	private String PlayerName;
 	private int iPlayerPosition;
-	
+
 	public PlayerDomainModel(String PlayerName, int iPlayerPosition) {
-	
+
 		this.setPlayerID(UUID.randomUUID());
 		this.setPlayerName(PlayerName);
-		this.setiPlayerPosition(iPlayerPosition);	
+		this.setiPlayerPosition(iPlayerPosition);
 	}
 
 	public UUID getPlayerID() {
@@ -39,5 +39,4 @@ public class PlayerDomainModel {
 		this.iPlayerPosition = iPlayerPosition;
 	}
 
-	
 }

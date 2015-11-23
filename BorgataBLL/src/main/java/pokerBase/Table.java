@@ -7,7 +7,7 @@ import domain.TableDomainModel;
 public class Table extends TableDomainModel {
 
 	private ArrayList<Player> Players = new ArrayList<Player>();
-	
+
 	public Table() {
 		super();
 	}
@@ -20,14 +20,12 @@ public class Table extends TableDomainModel {
 		Players = players;
 	}
 
-	public Table addPlayer(Player p)
-	{
+	public Table addPlayer(Player p) {
 		Players.add(p);
 		return this;
 	}
 
-	public Table removePlayer(Player p)
-	{
+	public Table removePlayer(Player p) {
 		Players.remove(p);
 		return this;
 	}

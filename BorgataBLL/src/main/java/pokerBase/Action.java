@@ -11,7 +11,7 @@ public class Action {
 	private int iCardsToDraw;
 
 	public Action(GamePlay gme, int iCardDrawnPlayer, int iCardDrawnCommon, int iDrawCount) {
-		
+
 		this.setGme(gme);
 		this.bEvaluateHand = false;
 		if (iCardDrawnPlayer < gme.getRule().GetPlayerNumberOfCards()) {
@@ -22,11 +22,10 @@ public class Action {
 			eDrawAction = eDrawAction.DrawCommon;
 			iCardDrawnCommon++;
 		}
-		if (iCardDrawnPlayer + iCardDrawnCommon == gme.getRule().getTotalCardsToDraw())
-		{
+		if (iCardDrawnPlayer + iCardDrawnCommon == gme.getRule().getTotalCardsToDraw()) {
 			this.bEvaluateHand = true;
 		}
-		this.setiCardDrawn(gme.getRule().getiCardsToDraw()[iDrawCount-1]);
+		this.setiCardDrawn(gme.getRule().getiCardsToDraw()[iDrawCount - 1]);
 	}
 
 	public GamePlay getGme() {

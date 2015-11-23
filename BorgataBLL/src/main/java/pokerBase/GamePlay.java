@@ -18,9 +18,8 @@ public class GamePlay extends GamePlayDomainModel {
 	private ArrayList<GamePlayPlayerHand> GameCommonHand = new ArrayList<GamePlayPlayerHand>();
 	private Rule rle;
 	private Deck GameDeck = null;
-	
-	public GamePlay(Rule rle)
-	{
+
+	public GamePlay(Rule rle) {
 		this.setGameID(UUID.randomUUID());
 		this.setNbrOfCards(rle.GetPlayerNumberOfCards());
 		this.setMaxNbrOfPlayers(rle.GetMaxNumberOfPlayers());
@@ -29,10 +28,10 @@ public class GamePlay extends GamePlayDomainModel {
 		this.rle = rle;
 	}
 
-	public Rule getRule()
-	{
+	public Rule getRule() {
 		return this.rle;
 	}
+
 	public ArrayList<Player> getGamePlayers() {
 		return GamePlayers;
 	}
@@ -40,9 +39,8 @@ public class GamePlay extends GamePlayDomainModel {
 	public void setGamePlayers(ArrayList<Player> gamePlayers) {
 		GamePlayers = gamePlayers;
 	}
-	
-	public void addPlayerToGame(Player p)
-	{
+
+	public void addPlayerToGame(Player p) {
 		GamePlayers.add(p);
 	}
 
@@ -53,44 +51,34 @@ public class GamePlay extends GamePlayDomainModel {
 	public void setGameDeck(Deck gameDeck) {
 		GameDeck = gameDeck;
 	}
-	
-	public void addGamePlayPlayerHand(GamePlayPlayerHand GPPH)
-	{
+
+	public void addGamePlayPlayerHand(GamePlayPlayerHand GPPH) {
 		GamePlayerHand.add(GPPH);
 	}
-	
-	public void addGamePlayCommonHand(GamePlayPlayerHand GPCH)
-	{
+
+	public void addGamePlayCommonHand(GamePlayPlayerHand GPCH) {
 		GameCommonHand.add(GPCH);
 	}
 
-	public GamePlayPlayerHand FindCommonHand(GamePlay gme)
-	{
+	public GamePlayPlayerHand FindCommonHand(GamePlay gme) {
 		GamePlayPlayerHand GPCH = null;
-		for (GamePlayPlayerHand GPPH: GameCommonHand)
-		{
-			if (GPPH.getGame().getGameID() == gme.getGameID())
-			{
+		for (GamePlayPlayerHand GPPH : GameCommonHand) {
+			if (GPPH.getGame().getGameID() == gme.getGameID()) {
 				GPCH = GPPH;
 			}
-		}		
+		}
 		return GPCH;
 	}
-	
-	public GamePlayPlayerHand FindPlayerGame(GamePlay gme, Player p)
-	{
+
+	public GamePlayPlayerHand FindPlayerGame(GamePlay gme, Player p) {
 		GamePlayPlayerHand GPPHReturn = null;
-		
-	
-		for (GamePlayPlayerHand GPPH: GamePlayerHand)
-		{
-			if (p.getiPlayerPosition() == GPPH.getPlayer().getiPlayerPosition())
-			{
+
+		for (GamePlayPlayerHand GPPH : GamePlayerHand) {
+			if (p.getiPlayerPosition() == GPPH.getPlayer().getiPlayerPosition()) {
 				GPPHReturn = GPPH;
 			}
 		}
 		return GPPHReturn;
 	}
-	
-	
+
 }
