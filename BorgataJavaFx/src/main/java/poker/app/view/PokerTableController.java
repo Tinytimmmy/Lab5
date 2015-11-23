@@ -448,7 +448,7 @@ public class PokerTableController {
 			case 4:
 				winner1= this.txtP4Name.getText();
 			}
-			winner.setHeaderText("The winner is: " + winner);
+			winner.setHeaderText("The winner is: " + winner1);
 			winner.setContentText("You have won the game with: " + winningHand.getHandStrength());
 			winner.showAndWait();
 			SetGameControls(eGameState.EndOfGame);
