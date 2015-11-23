@@ -119,10 +119,16 @@
                               <TextField fx:id="txtP4Name" style="-fx-background-color: lightgreen;" />
                               <Label fx:id="lblP4Name" />
                            </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </GridPane>
                      </children>
                   </HBox>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </AnchorPane>
          </right>
          <center>
@@ -140,7 +146,7 @@
                                  <children>
                                     <Button fx:id="btnPlay" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlePlay" text="Play" />
                                     <Button fx:id="btnDraw" layoutX="89.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDraw" text="Draw" />
-                                    <HBox fx:id="HboxCommonArea" layoutX="171.0" layoutY="14.0" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: green;" />
+                                    <HBox fx:id="HboxCommonArea" layoutX="170.0" layoutY="14.0" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: green;" />
                                  </children>
                               </AnchorPane>
                           </items>
